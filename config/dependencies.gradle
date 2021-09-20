@@ -1,0 +1,38 @@
+ext.versions = [
+
+        minSdk               : 23,
+        compileSdk           : 31,
+        versionCode          : 1,
+        versionName          : '1.0.1',
+
+        // support library
+        materialVersion      : '1.4.0',
+        constraintVersion    : '2.1.0',
+
+        // architecture components
+        fragmentVersion      : '1.3.6',
+        legacyVersion        : '1.0.0',
+        appcompatVersion     : '1.3.1',
+
+        //Network
+        retrofitVersion      : '2.9.0',
+        okhttpVersion        : '5.0.0-alpha.2',
+
+        // Coroutines
+        coroutinesVersion    :  '1.5.1',
+        coroutinesLLifecycleVersion    :  '2.3.1',
+
+        //Dagger - Hilt
+        hiltVersion          :  '2.37',
+        hiltCoreVersion      :  '2.38.1',
+        hiltLifecycleVersion :  '1.0.0-alpha03',
+        hiltCompilerVersion :  '1.0.0',
+
+        //Picasso
+        picassoVezrsion      : '2.71828',
+
+        // unit test
+        junitVersion         : '4.13.2',
+        androidxTestJunit    : '1.1.3',
+        espressoVersion      : '3.4.0',
+        ]
