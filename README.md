@@ -4,7 +4,7 @@
 This project is for focusing especially on the new library Hilt of implementing dependency injection.
 Also fetching data from the network.
  </p>
- <P>🕛 I spent 12 hours developing this application. </p>
+ <P>🕛 I spent 16 hours developing this application. </p>
 
 <p align="center">
 <img src="/previews/screenshot.png"/>
