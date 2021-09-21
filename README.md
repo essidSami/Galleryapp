@@ -31,4 +31,4 @@ GalleryApp is based on clean architecture and a repository pattern.
 ## Improvements
 - Working with Jetpack Compose for UI.
 - Create Room database for offline mode.
-- Implementation UnitTest.
+- Improve UnitTest coverage rate.

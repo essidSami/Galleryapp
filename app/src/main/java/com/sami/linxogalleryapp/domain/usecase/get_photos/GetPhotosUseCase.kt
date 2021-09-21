@@ -20,9 +20,9 @@ class GetPhotosUseCase @Inject constructor(
             val photo = repository.getPhotoByAlbum(albumId = albumId).map { it.toPhoto() }
             emit(Resource.Success<List<Photo>>(photo))
         } catch (e: HttpException) {
-            emit(Resource.Error<List<Photo>>(""))
+            emit(Resource.Error<List<Photo>>("An unexpected error occurred."))
         } catch (e: IOException) {
-            emit(Resource.Error<List<Photo>>(""))
+            emit(Resource.Error<List<Photo>>("Couldn't reach server. Check your internet connection."))
         }
     }
 }

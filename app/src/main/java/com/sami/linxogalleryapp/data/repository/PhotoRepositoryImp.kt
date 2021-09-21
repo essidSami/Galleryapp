@@ -9,6 +9,6 @@ class PhotoRepositoryImp @Inject constructor(
     private val api: GalleryApi
 ) : PhotoRepository {
 
-    override suspend fun getPhotoByAlbum(photoId: Int): List<PhotoDto> =
-        api.getPhotoByAlbum(albumId = photoId)
+    override suspend fun getPhotoByAlbum(albumId: Int): List<PhotoDto> =
+        api.getPhotoByAlbum(albumId = albumId)
 }

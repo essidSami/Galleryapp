@@ -20,9 +20,9 @@ class GetUserUseCase @Inject constructor(
             val user = repository.getUsers().map { it.toUser() }
             emit(Resource.Success<List<User>>(user))
         } catch (e: HttpException) {
-            emit(Resource.Error<List<User>>(""))
+            emit(Resource.Error<List<User>>("An unexpected error occurred."))
         } catch (e: IOException) {
-            emit(Resource.Error<List<User>>(""))
+            emit(Resource.Error<List<User>>("Couldn't reach server. Check your internet connection."))
         }
     }
 }
