@@ -4,20 +4,16 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import com.sami.linxogalleryapp.MainCoroutinesRule
 import com.sami.linxogalleryapp.data.repository.AlbumsRepositoryImp
-import com.sami.linxogalleryapp.data.repository.PhotoRepositoryImp
 import com.sami.linxogalleryapp.data.repository.UserRepositoryImp
 import com.sami.linxogalleryapp.data.source.remote.GalleryApi
 import com.sami.linxogalleryapp.domain.usecase.get_albums.GetAlbumsUseCase
-import com.sami.linxogalleryapp.domain.usecase.get_photos.GetPhotosUseCase
 import com.sami.linxogalleryapp.domain.usecase.get_user.GetUserUseCase
-import com.sami.linxogalleryapp.presentation.photo_list.PhotoViewModel
 import com.sami.linxogalleryapp.utils.MockUtil
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
-
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.MockitoAnnotations
 
 class AlbumListViewModelTest {
 
@@ -33,6 +29,7 @@ class AlbumListViewModelTest {
 
     @Before
     fun setUp() {
+        MockitoAnnotations.initMocks(this)
         albumRepository = AlbumsRepositoryImp(api)
         userRepository = UserRepositoryImp(api)
         albumUseCase = GetAlbumsUseCase(albumRepository)
@@ -43,12 +40,15 @@ class AlbumListViewModelTest {
     @Test
     fun fetchAlbumListFromNetworkTest(): Unit = runBlocking {
         val mockData = MockUtil.mockAlbumList()
+        //Given
         whenever(albumRepository.getAlbums()).thenReturn(mockData)
     }
 
     @Test
     fun fetchUserListFromNetworkTest(): Unit = runBlocking {
         val mockData = MockUtil.mockUserList()
+        //Given
         whenever(userRepository.getUsers()).thenReturn(mockData)
+
     }
 }

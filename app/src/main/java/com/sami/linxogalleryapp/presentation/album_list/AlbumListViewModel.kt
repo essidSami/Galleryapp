@@ -33,7 +33,7 @@ class AlbumListViewModel @Inject constructor(
         getAlbumList()
     }
 
-    private fun getAlbumList() {
+    fun getAlbumList() {
         getAlbumsUseCase().onEach { result ->
             when (result) {
                 is Resource.Loading -> {
@@ -64,7 +64,7 @@ class AlbumListViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
-    private fun getUserList() {
+    fun getUserList() {
         getUserUseCase().onEach { result ->
             when (result) {
                 is Resource.Loading -> {

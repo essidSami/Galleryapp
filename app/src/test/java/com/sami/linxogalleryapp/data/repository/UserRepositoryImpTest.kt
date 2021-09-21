@@ -4,12 +4,9 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import com.sami.linxogalleryapp.MainCoroutinesRule
 import com.sami.linxogalleryapp.data.source.remote.GalleryApi
-import com.sami.linxogalleryapp.domain.usecase.get_photos.GetPhotosUseCase
 import com.sami.linxogalleryapp.domain.usecase.get_user.GetUserUseCase
-import com.sami.linxogalleryapp.utils.MockUtil
+import com.sami.linxogalleryapp.utils.MockUtil.mockUserList
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
-
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -32,6 +29,6 @@ class UserRepositoryImpTest {
 
     @Test
     fun fetchUserListFromNetworkTest(): Unit = runBlocking {
-        whenever(api.getUsers()).thenReturn(Response.success(MockUtil.mockUserList()).body())
+        whenever(api.getUsers()).thenReturn(Response.success(mockUserList()).body())
     }
 }
